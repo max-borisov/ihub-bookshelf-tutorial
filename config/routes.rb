@@ -1,39 +1,11 @@
-Rails.application.routes.draw do
-  get 'orders/index'
-
-  get 'orders/create'
-
-  get 'shopping_cart_items/index'
-
-  get 'shopping_cart_items/create'
-
-  get 'shopping_cart_items/destroy'
-
-  get 'reviews/create'
-
-  get 'reviews/destroy'
-
-  get 'reviews/create'
-
-  get 'reviews/destroy'
-
-  get 'users/show'
-
-  get 'users/destroy'
-
-  get 'books/index'
-
-  get 'books/new'
-
-  get 'books/create'
-
-  get 'books/show'
-
-  get 'books/edit'
-
-  get 'books/update'
-
-  get 'books/destroy'
+Rails.application.routes.draw do  
+  root 'books#index'
+  resources :users, only: [:show, :destroy]
+  resources :books do
+    resources :reviews, only: [:create, :destroy], on: :member
+  end
+  resources :shopping_cart_items, only: [:index, :create, :destroy]
+  resources :orders, only: [:index, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
