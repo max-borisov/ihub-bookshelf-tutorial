@@ -1,0 +1,49 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "books";
+@import "users";
+@import "reviews";
+@import "shopping_cart_items";
+@import "orders";
+
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #f6f8f9;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  .nav-user-name {
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-right: 20px;
+  }  
+  .navbar-header, .navbar-user {
+    padding-top: 10px;
+    height: 70px; 
+  }
+  span.badge {
+    font-size: 15px;
+  }
+}
+
+.debug-panel {
+  margin-top: 20px;
+}
+
+#error_explanation {
+  border: 2px solid #C00;
+  padding: 7px 7px 12px 7px;
+  margin: 0 0 20px 0;
+  background: #FEE;
+}
+
+.form-suggestion-footer {
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+.alert-big {
+  font-size: 18px;
+}

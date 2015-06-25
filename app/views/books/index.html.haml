@@ -1,2 +1,8 @@
-%h1 Books#index
-%p Find me in app/views/books/index.html.haml
+= render 'shared/flash_notice' if notice
+.pull-left
+.pull-right.book-count-block
+  %p.text-info
+    = pluralize(@books.count, 'book')
+    in the catalog
+.clearfix
+= render @books

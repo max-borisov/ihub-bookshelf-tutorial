@@ -1,3 +1,65 @@
-// Place all the styles related to the books controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.price-box {
+  font-size: 3em;
+  margin-top: 50px;
+}
+.add-to-cart-btn {
+  margin-top: 21px;
+}
+.book-cover {
+  img {
+    width: 140px;
+  }
+}
+.book-cover-mini {
+  img {
+    width: 100px;
+  }
+}
+.book-cover-lg {
+  img {
+    width: 240px;
+  }
+}
+.back-button-block {
+  margin-bottom: 10px;
+}
+.book-action-links {
+  margin-left: -10px;
+}
+.book-price-block {
+  background: #eee;
+  padding-bottom: 30px;
+}
+.book-info-block {
+  h2 {
+    margin-top: 0;
+  }
+  p {
+    margin-bottom: 5px;
+    span {
+      font-weight: bold;
+    }
+  }
+}
+.search-book-form {
+  .search-book-title {
+    width: 100%;
+    font-size: 1.2em;
+  }
+  .book-search-by {
+    margin-top: 5px;
+    label {
+      margin-right: 5px;
+    }
+  }
+}
+.book-not-found-block {
+  font-size: 2em;
+  margin-top: 40px;
+}
+.book-count-block {
+  p {
+    margin-top: 35px;
+    font-size: 1.3em;
+  }
+}

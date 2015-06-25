@@ -1,0 +1,21 @@
+- book_url = book_path(book)
+.row
+  .col-md-2.book-cover
+    = link_to book_cover(h(book.title), book.amazon_id), book_url, title: h(book.title)
+  .col-md-8.book-info-block
+    %h2= link_to h(book.title), book_url, title: h(book.title)
+    %h5
+      by #{h(book.author)}
+    %p
+      %span ISBN-10:
+      = book.isbn
+    %p
+      %span Published:
+      = format_pub_date(book.pub_date)
+    %p
+      = sanitize(book.description.truncate_words(50), tags: %w(p h5 ul li)) + ' ' + link_to('more', book_url)
+      \.
+  .col-md-2.book-price-block
+    %p.price-box.text-center= number_to_currency(book.price)
+    / = render 'add_to_cart', book: book
+%hr/
