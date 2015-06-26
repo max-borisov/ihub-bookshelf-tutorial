@@ -1,0 +1,11 @@
+%hr/
+- order_items = order.order_items.includes(:book)
+.row.order-history-row
+  .col-md-4.text-center
+    %p.order-details= number_to_currency(order.total_price)
+    %p.order-books= format_pub_date(order.created_at)
+  .col-md-8
+    %p.order-books-amount= pluralize(order_items.count, 'book') + " have been purchased"
+    %ul
+      - order_items.each do |item|
+        %li= link_to item.book.title, book_path(item.book)

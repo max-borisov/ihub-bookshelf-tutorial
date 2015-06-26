@@ -1,3 +1,22 @@
-// Place all the styles related to the orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.orders-history-alert {
+  font-size: 1.2em;
+}
+.order-history-row {
+  .order-details {
+    font-size: 2em;
+  }
+  .order-books {
+    font-size: 1em;
+  }
+  .order-books-amount {
+    font-size: 1.2em;
+  }
+  ul {
+    li {
+      padding: 3px 0;
+      a{
+        font-size: 1.1em;
+      }
+    }
+  }
+}

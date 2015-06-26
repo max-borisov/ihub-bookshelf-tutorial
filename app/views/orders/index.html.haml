@@ -1,2 +1,11 @@
-%h1 Orders#index
-%p Find me in app/views/orders/index.html.haml
+= render 'shared/page_header', title: 'Orders history'
+.row
+  .col-md-6.col-md-offset-3
+    - if @orders.empty?
+      .alert.alert-warning.text-center.orders-history-alert You don't have any orders yet
+    - else
+      - orders_count = pluralize(@orders.count, 'order')
+      - total_sum = number_to_currency(@orders.pluck(:total_price).sum)
+      .alert.alert-info.text-center.orders-history-alert
+        = "You spent #{total_sum} for #{orders_count}"
+      = render @orders
