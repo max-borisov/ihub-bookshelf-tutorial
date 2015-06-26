@@ -1,6 +1,6 @@
 ## 1. Create rails project
 
-Commit link [909090](http://)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/56c43ac32d8c388b0898012ec56d670de4b3e3a8)
 
 First of all lets check if you have a ruby installed on your computer. Open a terminal and type `ruby -v`. You might see something like that:
 
@@ -39,7 +39,7 @@ $ rails new rails-bookshelf
 
 ## 2. Update Gemfile
 
-Commit link [909090](http://)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/58290b398cd16e035bd1e7d4a8464d830807afb5)
 
 Gemfile(on the project root) stores the list of gems required for the project.
 
@@ -68,7 +68,7 @@ $ bundle install
 
 ## 3. Models
 
-Commit link [909090](http://)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/a03341a350225ac4c0986153d65f41a30ab49ce7)
 
 There will be 6 models:
 
@@ -124,9 +124,11 @@ $ rake -T
 * [Active Record Associations](http://guides.rubyonrails.org/association_basics.html)
 * [The Rails Command Line](http://guides.rubyonrails.org/command_line.html)
 
+***
+
 ## 4. Create seed files
 
-Commit link [909090](http://)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/613168d948a2c325a903a797ec901f32867bfa35)
 
 Seed data are used to populate a database.
 
@@ -218,7 +220,7 @@ ap User.count
 
 ## 6. Controllers
 
-Commit link [909090](http://)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/6a5a5bbdcb090440ebde6c1c16c05f1170c90900)
 
 Example how we can generate controllers. Views and assets files will be generated as well.
 ```console
@@ -234,7 +236,7 @@ $ rails generate controller books index new create show edit update destroy
 
 ## 7. Routes
 
-Commit link [909090](http://)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/784db991ff92356399489efbfe86bc53fd13cb8c)
 
 The Rails router recognizes URLs and dispatches them to a controller's action.
 
@@ -252,7 +254,7 @@ $ rake routes
 
 ## 8. Update main layout
 
-Commit link [909090](http://)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/2acb2d3961d5fec5dc579326d8bad0b074248ce3)
 
 #### Related links
 
@@ -263,7 +265,7 @@ Commit link [909090](http://)
 
 ## 9. Books catalog
 
-Commit link [909090](http://)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/72f2161e8a3c509ee5cd8218e583c7a57ef9219a)
 
 #### Related links
 
@@ -297,4 +299,3 @@ http://localhost:4000
 * [WEBrick](https://rubygems.org/gems/webrick/versions/1.3.1)
 
 ***
-
