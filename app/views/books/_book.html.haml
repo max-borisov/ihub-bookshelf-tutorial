@@ -16,4 +16,5 @@
       = sanitize(book.description.truncate_words(50))
   .col-md-2.book-price-block
     %p.price-box.text-center= number_to_currency(book.price)
+    = render 'add_to_cart', book: book
 %hr/

@@ -1,2 +1,12 @@
-%h1 ShoppingCartItems#index
-%p Find me in app/views/shopping_cart_items/index.html.haml
+= render 'shared/page_header', title: 'Shopping cart'
+= render 'shared/flash_alert' if alert
+.alert.alert-info.text-center.shopping-cart-info-message{:role => "alert"}
+  - if (items_amount = current_user.shopping_cart_items_amount) > 0
+    .pull-left= "You have #{pluralize(items_amount, 'item')} in your shopping cart. Total price: <span>#{number_to_currency(current_user.shopping_cart_total_price)}</span>".html_safe
+    .pull-right= button_to 'Checkout', orders_path, class: 'btn btn-primary btn-md'
+  - else
+    %div= 'You do not have any books in your cart yet'
+= render 'shared/flash_notice' if notice
+.row
+  .col-md-8.col-md-offset-2
+    = render @items

@@ -1,0 +1,16 @@
+- book = cart_item.book
+.row
+  .col-md-3.book-cover-mini
+    = link_to book_cover(h(book.title), book.amazon_id), book_path(book), title: h(book.title)
+  .col-md-6
+    %h2= link_to h(book.title), book_path(book), title: h(book.title)
+    %h5
+      by #{h(book.author)} (Author)
+    %p
+      Publisher: #{h(book.publisher)}
+  .col-md-3
+    %p.shopping-cart-price-box.text-center= number_to_currency book.price
+    .text-center
+      / # = button_to('Delete from cart', cart_item, method: :delete, data: { confirm: 'Are you sure ?' }, class: 'btn btn-md btn-danger add-to-cart-btn')
+    / # = content_tag(:div, button_to('Delete from cart', cart_item, method: :delete, data: { confirm: 'Are you sure ?' }, class: 'btn btn-md btn-danger add-to-cart-btn'), class: 'text-center')
+%hr/

@@ -1,3 +1,13 @@
-// Place all the styles related to the shopping_cart_items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.shopping-cart-price-box {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.shopping-cart-info-message {
+  height: 67px;
+  font-size: 20px;
+  overflow: hidden;
+  span {
+    font-weight: bold;
+  }
+}
