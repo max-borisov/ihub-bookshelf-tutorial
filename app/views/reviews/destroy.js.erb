@@ -1,0 +1,4 @@
+$('a[href="<%= j book_review_path(@book, params[:id]) %>"]').parent().remove()
+if ($('.review-block').length < 1) {
+    $('h4').hide()
+}

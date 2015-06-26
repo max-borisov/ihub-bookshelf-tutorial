@@ -26,3 +26,4 @@
       %hr/
       %h4.text-center Customer reviews
       = render @reviews
+    = render 'reviews/form' if user_signed_in?

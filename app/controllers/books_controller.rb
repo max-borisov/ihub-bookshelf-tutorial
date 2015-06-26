@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @books = Book.order(created_at: :asc).all
   end
@@ -12,6 +14,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @reviews = @book.reviews
+    @review = Review.new
   end
 
   def edit

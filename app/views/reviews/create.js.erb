@@ -1,0 +1,5 @@
+$("<%= escape_javascript(render @review) %>").insertBefore(".add-review-block");
+$('#review_text').val('')
+if ($('.review-block').length > 0) {
+    $('h4').show()
+}

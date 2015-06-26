@@ -1,4 +1,7 @@
 .review-block
+  - if user_signed_in? && (review.belongs_to_user?(current_user) || current_user.admin?)    
+    = link_to(book_review_path(@book, review), method: :delete, data: { confirm: "Are you sure?" }, class: 'pull-right delete-review', title: 'Delete review', remote: true) do
+      %span.glyphicon.glyphicon-remove{"aria-hidden" => "true"}
   %p.review-author
     By
     %span.review-user-name= review.user.name
