@@ -355,7 +355,7 @@ In order to make __devise__ work to the following:
 
 ## 16. Book reviews
 
-[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/bd243438b40c34fc451f88da76b8aaf2b090dcd5)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/930203d4ee423c96d3a0d0cb033f6ec421e7cde6)
 
 ***
 
