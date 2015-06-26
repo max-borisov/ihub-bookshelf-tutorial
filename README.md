@@ -300,9 +300,9 @@ http://localhost:4000
 
 ***
 
-## Book page
+## 11. Book page
 
-[Commit link]()
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/29e725469d317b096fb1d33baa9b94ca9b670487)
 
 #### Related links
 
@@ -310,9 +310,9 @@ http://localhost:4000
 
 ***
 
-## Devise
+## 12. Devise
 
-[Commit link]()
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/dba6ca636891b3715a117d9ef8e322fe725360f8)
 
 Devise is an authentication solution for Rails projects.
 
@@ -332,5 +332,35 @@ In order to make __devise__ work to the following:
 #### Related links
 
 * [Devise gem](https://github.com/plataformatec/devise)
+
+***
+
+## 13. Update main layout
+
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/2f4ba006afed01a492560ef3a78a95c19521b5c4)
+
+***
+
+## 14. Shopping cart
+
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/2f4ba006afed01a492560ef3a78a95c19521b5c4)
+
+***
+
+## 15. Checkout and orders
+
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/6317b02824d5240161bc4273c5df16e7b1c0bfc8)
+
+***
+
+## 16. Book reviews
+
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/bd243438b40c34fc451f88da76b8aaf2b090dcd5)
+
+***
+
+## 17. CRUD for books
+
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/dd2074669a9602cb0b15898a17a9ecd7748c7109)
 
 ***
