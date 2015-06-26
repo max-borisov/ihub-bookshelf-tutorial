@@ -11,4 +11,34 @@
         .container-fluid
           .navbar-header
             %a.navbar-brand{:href => "/"} Rails bookshelf
+          #navbar.navbar-collapse.collapse
+            - if user_signed_in?
+              %ul.nav.navbar-nav.navbar-right
+                %li.dropdown
+                  %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                    = image_tag(user_gravatar(current_user.email, 40))
+                    %span.caret
+                  %ul.dropdown-menu{:role => "menu"}
+                    %li= link_to 'Profile', user_path(current_user)
+                    %li= link_to 'Shopping cart', shopping_cart_items_path
+                    - unless current_user.orders.empty?
+                      %li= link_to 'Orders history', orders_path
+                    - if current_user.admin?
+                      %li.divider
+                      %li.dropdown-header Admin
+                      %li= link_to 'Add book', new_book_path
+                    %li.divider
+                    %li= link_to 'Log out', destroy_user_session_path, method: :delete
+              %ul.nav.navbar-nav.navbar-right.navbar-user
+                %li.nav-user-name
+                  %span
+                    Hi, #{current_user.name}
+                %li
+                  = link_to(shopping_cart_items_path) do
+                    %span.glyphicon.glyphicon-shopping-cart{"aria-hidden" => "true"}
+                    %span.badge= number_to_currency(current_user.shopping_cart_total_price())
+            - else
+              %ul.nav.navbar-nav.navbar-right.navbar-user
+                %li
+                  = link_to('Sign in', new_user_session_path)
       = yield
