@@ -1,3 +1,9 @@
+1. [Create rails project](#1-create-rails-project)
+2. [Update Gemfile](#2-update-gemfile)
+3. [Models](#3-models)
+4. [Create seed files](#4-create-seed-files)
+5. [Rails console](#5-rails-console)
+
 ## 1. Create rails project
 
 [Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/56c43ac32d8c388b0898012ec56d670de4b3e3a8)
