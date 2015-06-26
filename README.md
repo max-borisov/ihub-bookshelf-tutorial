@@ -299,3 +299,38 @@ http://localhost:4000
 * [WEBrick](https://rubygems.org/gems/webrick/versions/1.3.1)
 
 ***
+
+## Book page
+
+[Commit link]()
+
+#### Related links
+
+* [WEBrick](https://rubygems.org/gems/webrick/versions/1.3.1)
+
+***
+
+## Devise
+
+[Commit link]()
+
+Devise is an authentication solution for Rails projects.
+
+In order to make __devise__ work to the following:
+
+1. `$ rails generate devise:install`
+2. `$ rails generate devise user`
+3. update migration file __db/migrate/xxxx_add_devise_to_users.rb__
+4. `$ rake db:migrate`
+5. update user model(app/models/user.rb)
+6. restart the web server. Turn it off and run `$ rails s -p 4000` again
+7. http://localhost:4000/users/sign_up and http://localhost:4000/users/sign_in are available now
+8. if you want to configure the default views run the commmand
+`$ rails generate devise:views -v registrations sessions`
+9. update app/views/devise files
+
+#### Related links
+
+* [Devise gem](https://github.com/plataformatec/devise)
+
+***
