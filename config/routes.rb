@@ -1,5 +1,6 @@
 Rails.application.routes.draw do  
   root 'books#index'
+  devise_for :users
   resources :users, only: [:show, :destroy]
   resources :books do
     resources :reviews, only: [:create, :destroy], on: :member
