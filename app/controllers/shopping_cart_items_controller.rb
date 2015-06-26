@@ -1,4 +1,6 @@
 class ShoppingCartItemsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @items = current_user.shopping_cart_items.joins(:book).order(created_at: :asc)
   end
