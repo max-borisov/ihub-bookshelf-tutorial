@@ -1,2 +1,27 @@
-%h1 Books#show
-%p Find me in app/views/books/show.html.haml
+.row
+  = render 'shared/back_button', link: books_path
+  .clearfix
+  = render 'shared/flash_notice' if notice
+  .col-md-3.book-cover-lg
+    %p.text-center
+      = book_cover(h(@book.title), @book.amazon_id)
+  .col-md-7.book-info-block
+    %h1= h(@book.title)
+    %p
+      %strong
+        by #{h(@book.author)}
+    %p
+      %span ISBN-10:
+      = @book.isbn
+    %p
+      %span Published:
+      = format_pub_date(@book.pub_date)
+    %p= sanitize @book.description, tags: %w(p h5 ul li)
+  .col-md-2.book-price-block
+    %p.text-center.price-box= number_to_currency(@book.price)
+.row
+  #reviews.col-md-10.col-md-offset-1
+    - if @reviews.any?
+      %hr/
+      %h4.text-center Customer reviews
+      = render @reviews

@@ -1,0 +1,8 @@
+.add-review-block
+  = form_for @review, url: book_reviews_path(@book), remote: true, html: { role: 'form' } do |f|
+    .form-group
+      = f.label :text, 'Add your review/opinion:'
+      = f.text_area :text, class: 'form-control'
+    .actions
+      = f.submit 'Send', class: 'btn btn-md btn-primary'
+%hr/

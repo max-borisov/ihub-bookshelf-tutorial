@@ -13,9 +13,7 @@
       %span Published:
       = format_pub_date(book.pub_date)
     %p
-      = sanitize(book.description.truncate_words(50), tags: %w(p h5 ul li)) + ' ' + link_to('more', book_url)
-      \.
+      = sanitize(book.description.truncate_words(50))
   .col-md-2.book-price-block
     %p.price-box.text-center= number_to_currency(book.price)
-    / = render 'add_to_cart', book: book
 %hr/

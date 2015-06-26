@@ -1,0 +1,7 @@
+.review-block
+  %p.review-author
+    By
+    %span.review-user-name= review.user.name
+    on #{format_pub_date(review.created_at)}
+  %p.review-text= review.text
+  %hr/
