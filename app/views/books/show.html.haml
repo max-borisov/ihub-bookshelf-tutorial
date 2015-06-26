@@ -5,6 +5,11 @@
   .col-md-3.book-cover-lg
     %p.text-center
       = book_cover(h(@book.title), @book.amazon_id)
+    - if user_signed_in? && current_user.admin?
+      .pull-left
+        = link_to 'Edit', edit_book_path(@book), class: 'btn btn-md btn-warning book-edit-link'
+      .pull-right
+        = button_to 'Delete', @book, method: :delete, data: { confirm: 'Are you sure ?' }, class: 'btn btn-md btn-danger book-delete-link'
   .col-md-7.book-info-block
     %h1= h(@book.title)
     %p

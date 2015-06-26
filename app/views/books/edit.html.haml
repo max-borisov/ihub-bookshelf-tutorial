@@ -1,2 +1,5 @@
-%h1 Books#edit
-%p Find me in app/views/books/edit.html.haml
+.row
+  = render 'shared/back_button', link: book_path
+%h1.text-center Editing book
+%hr/
+= render 'form'

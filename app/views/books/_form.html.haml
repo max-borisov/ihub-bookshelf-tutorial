@@ -1,0 +1,28 @@
+.row
+  .col-md-6.col-md-offset-3
+    - if @book.errors.any?
+      = render 'shared/error', model: @book
+    = form_for @book, html: {role: 'form'} do |f|
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control'
+      .form-group
+        = f.label :author
+        = f.text_field :author, class: 'form-control'
+      .form-group
+        = f.label :pub_date
+        = f.date_select :pub_date, class: 'form-control'
+      .form-group
+        = f.label :price
+        = f.text_field :price, class: 'form-control'
+      .form-group
+        = f.label :isbn, 'ISBN'
+        = f.text_field :isbn, class: 'form-control'
+      .form-group
+        = f.label :amazon_id, 'Amazon id'
+        = f.text_field :amazon_id, class: 'form-control'
+      .form-group
+        = f.label :description
+        = f.text_area :description, class: 'form-control', rows: 8
+      .actions
+        = f.submit 'Save', class: 'btn btn-lg btn-primary btn-block'
