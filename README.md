@@ -397,17 +397,27 @@ Open a terminal, go to the project directory and the following:
 
 ***
 
-## 20. User profile
+## 19. User profile
 
 [Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/e57f30ad21e52d2d55c8f3b1e8f3df18b1485767)
 
 ***
 
-## 19. Heroku
+## 20. Heroku
 
-[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/7cb1fb8d3538fd3a6811df0347e067883d7ae594)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/79eed2f515e0529f34bcb8d9b294959cadf07fa5)
 
-heroku create
-git remote show heroku
+Open a terminal, go to the project directory and the following:
+1. `$ heroku create ihub-rails-bookshelf`
+2. `$ heroku list`
+3. `$ git push heroku master`
+4. `$ heroku run rake db:schema:load`
+5. `$ heroku run rake db:seed`
+6. `$ heroku open`
+
+#### Related links
+
+* [Rails 4.x on Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4#specify-ruby-version-in-app)
+* [Rails Girls Guides](http://guides.railsgirls.com/heroku/)
 
 ***
