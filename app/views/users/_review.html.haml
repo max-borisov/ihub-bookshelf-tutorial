@@ -1,0 +1,5 @@
+%li.clearfix
+  %div= review.text
+  .review-data.clearfix
+    %div.pull-left= format_pub_date(review.created_at)
+    %div.pull-left= link_to review.book.title, book_path(review.book)

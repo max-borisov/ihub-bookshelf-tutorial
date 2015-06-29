@@ -1,2 +1,31 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+- orders_count  = @user.orders.count
+.row
+  = render 'shared/page_header', title: 'Profile'
+  .col-md-3.text-center
+    = image_tag user_gravatar(@user.email)
+    %p
+      = button_to 'Delete account', user_path(@user), method: :delete, data: { confirm: 'Are you sure ?' }, class: 'btn btn-md btn-danger'
+  .col-md-4
+    %dl.dl-horizontal.user-profile-info
+      %dt Name:
+      %dd
+        %strong= h(@user.name)
+      %dt Email:
+      %dd
+        %strong= @user.email
+      %dt Orders:
+      %dd
+        -if orders_count > 0
+          = orders_count
+          = link_to('(view history)', orders_path)
+        -else
+          You have not made any orders yet
+      %dt Joined:
+      %dd= @user.created_at.to_formatted_s(:long)
+  .col-md-5
+    %h4.text-center Recent reviews
+    -if @user.reviews.count == 0
+      .alert.alert-info.alert-big.text-center You have not wrote any review yet
+    -else
+      %ul.list-unstyled.recent-reviews
+        = render partial: 'review', collection: @user.reviews
