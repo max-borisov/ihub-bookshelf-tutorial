@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626074809) do
+ActiveRecord::Schema.define(version: 20150629062305) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150626074809) do
     t.string   "isbn"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.string   "keywords"
   end
 
   add_index "books", ["amazon_id"], name: "index_books_on_amazon_id", unique: true

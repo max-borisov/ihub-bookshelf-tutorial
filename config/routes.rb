@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :destroy]
   resources :books do
     resources :reviews, only: [:create, :destroy], on: :member
+    get 'search' => 'books#search', on: :collection
   end
   resources :shopping_cart_items, only: [:index, :create, :destroy]
   resources :orders, only: [:index, :create, :destroy]

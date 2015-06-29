@@ -1,0 +1,18 @@
+.row
+  %form.form-inline.search-book-form{:action => search_books_path}
+    .form-group.col-md-6
+      = text_field_tag(:keywords, params[:keywords], class: 'form-control search-book-title')
+    %button.btn.btn-primary{:type => "submit"} Search
+    .form-group.col-md-6.book-search-by
+      %span Search book by title, author, isbn or amazon id
+      = link_to 'Reset', root_url, class: 'radio-inline'
+
+/ .row
+/   = form_for '', enforce_utf8: false, html: { method: :get, role: 'form', class: 'form-inline search-book-form' } do |f|
+/     .form-group.col-md-6
+/       = f.text_field :keywords, class: 'form-control search-book-title'
+/     / # = f.submit :Search, class: 'button btn btn-primary'
+/     = f.button :Search, class: 'button btn btn-primary', name: ''
+/     .form-group.col-md-6.book-search-by
+/       %span Search book by title, author, isbn or amazon id
+/       = link_to 'Reset', root_url, class: 'radio-inline'

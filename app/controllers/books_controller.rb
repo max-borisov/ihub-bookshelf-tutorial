@@ -1,9 +1,14 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   
   def index
     @books = Book.order(created_at: :asc).all
+  end
+
+  def search
+    @books = Book.search(params[:keywords]).order(created_at: :asc)
+    render :index
   end
 
   def new
