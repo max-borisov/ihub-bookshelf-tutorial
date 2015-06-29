@@ -370,3 +370,9 @@ In order to make __devise__ work to the following:
 [Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/dd2074669a9602cb0b15898a17a9ecd7748c7109)
 
 ***
+
+## 18. Search books
+
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/7cb1fb8d3538fd3a6811df0347e067883d7ae594)
+
+***
