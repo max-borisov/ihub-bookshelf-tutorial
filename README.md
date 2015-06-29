@@ -376,3 +376,12 @@ In order to make __devise__ work to the following:
 [Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/7cb1fb8d3538fd3a6811df0347e067883d7ae594)
 
 ***
+
+## 19. Heroku
+
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/7cb1fb8d3538fd3a6811df0347e067883d7ae594)
+
+heroku create
+git remote show heroku
+
+***
