@@ -381,7 +381,24 @@ In order to make __devise__ work to the following:
 
 [Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/7cb1fb8d3538fd3a6811df0347e067883d7ae594)
 
-heroku create
-git remote show heroku
+Open a terminal, go to the project directory and the following:
+
+1. `$ heroku create ihub-rails-bookshelf`
+2. `$ heroku list`
+3. `$ git push heroku master`
+4. `$ heroku run rake db:schema:load`
+5. `$ heroku run rake db:seed`
+6. `$ heroku open`
+
+#### Related links
+
+* [Rails 4.x on Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4#specify-ruby-version-in-app)
+* [Rails Girls Guides](http://guides.railsgirls.com/heroku/)
+
+***
+
+## 20. User profile
+
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/0e93b3333d6c2224f73d257f6ffc73e30e3a05ac)
 
 ***
