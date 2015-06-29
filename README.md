@@ -379,7 +379,7 @@ In order to make __devise__ work to the following:
 
 ## 19. Heroku
 
-[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/7cb1fb8d3538fd3a6811df0347e067883d7ae594)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/79eed2f515e0529f34bcb8d9b294959cadf07fa5)
 
 Open a terminal, go to the project directory and the following:
 
@@ -399,6 +399,6 @@ Open a terminal, go to the project directory and the following:
 
 ## 20. User profile
 
-[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/0e93b3333d6c2224f73d257f6ffc73e30e3a05ac)
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/e57f30ad21e52d2d55c8f3b1e8f3df18b1485767)
 
 ***
