@@ -402,3 +402,12 @@ Open a terminal, go to the project directory and the following:
 [Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/e57f30ad21e52d2d55c8f3b1e8f3df18b1485767)
 
 ***
+
+## 19. Heroku
+
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/7cb1fb8d3538fd3a6811df0347e067883d7ae594)
+
+heroku create
+git remote show heroku
+
+***
