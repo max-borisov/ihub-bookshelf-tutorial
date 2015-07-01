@@ -1,8 +1,26 @@
-1. [Create rails project](#1-create-rails-project)
-2. [Update Gemfile](#2-update-gemfile)
-3. [Models](#3-models)
-4. [Create seed files](#4-create-seed-files)
-5. [Rails console](#5-rails-console)
+Tutorial for building a Rails application.
+
+Basic functionality:
+
+* User registration / login
+* Add / edit / delete books by admin
+* Books catalog
+* Add / delete reviews
+* Manage shopping cart
+* Create / view orders
+
+In order to test the app:
+
+1. clone repository to your empty project directory 
+2. run `$ rake db:migrate` to apply database changes
+3. run `$ rake db:seed` to fill in the app with data
+4. run `rails server`
+5. open url `http://localhost:3000`
+
+You can login using predefined accounts:
+
+* login: __tom@gmail.com__, password: 11111111
+* login: __jack@gmail.com__, password: 11111111. It is admin account.
 
 ## 1. Create rails project
 
@@ -377,26 +395,6 @@ In order to make __devise__ work to the following:
 
 ***
 
-## 19. Heroku
-
-[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/79eed2f515e0529f34bcb8d9b294959cadf07fa5)
-
-Open a terminal, go to the project directory and the following:
-
-1. `$ heroku create ihub-rails-bookshelf`
-2. `$ heroku list`
-3. `$ git push heroku master`
-4. `$ heroku run rake db:schema:load`
-5. `$ heroku run rake db:seed`
-6. `$ heroku open`
-
-#### Related links
-
-* [Rails 4.x on Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4#specify-ruby-version-in-app)
-* [Rails Girls Guides](http://guides.railsgirls.com/heroku/)
-
-***
-
 ## 19. User profile
 
 [Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/e57f30ad21e52d2d55c8f3b1e8f3df18b1485767)
@@ -408,6 +406,7 @@ Open a terminal, go to the project directory and the following:
 [Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/79eed2f515e0529f34bcb8d9b294959cadf07fa5)
 
 Open a terminal, go to the project directory and the following:
+
 1. `$ heroku create ihub-rails-bookshelf`
 2. `$ heroku list`
 3. `$ git push heroku master`
