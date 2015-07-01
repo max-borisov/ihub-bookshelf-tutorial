@@ -1,5 +1,7 @@
 # Tutorial for building a Rails application
 
+[Wiki documentation](https://github.com/max-borisov/ihub-rails-bookshelf-tutorial/wiki) is also available (in progress).
+
 Basic functionality:
 
 * User registration / login
