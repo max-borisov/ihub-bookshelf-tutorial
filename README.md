@@ -1,4 +1,4 @@
-Tutorial for building a Rails application.
+# Tutorial for building a Rails application
 
 Basic functionality:
 
