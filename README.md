@@ -403,7 +403,18 @@ In order to make __devise__ work to the following:
 
 ***
 
-## 20. Heroku
+## 20. Pagination
+
+[Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/6addad4e6e650681b96e6170c2178b9a7c1206ec)
+
+#### Related links
+
+* [gem will_paginate](https://github.com/mislav/will_paginate)
+* [gem bootstrap-will_paginate](https://github.com/yrgoldteeth/bootstrap-will_paginate)
+
+***
+
+## 21. Heroku
 
 [Commit link](https://github.com/max-borisov/ihub-bookshelf-tutorial/commit/79eed2f515e0529f34bcb8d9b294959cadf07fa5)
 
