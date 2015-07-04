@@ -3,11 +3,11 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   
   def index
-    @books = Book.order(created_at: :asc).all
+    @books = Book.paginate(:page => params[:page], :per_page => per_page).order(created_at: :asc)
   end
 
   def search
-    @books = Book.search(params[:keywords]).order(created_at: :asc)
+    @books = Book.search(params[:keywords]).paginate(:page => params[:page], :per_page => per_page).order(created_at: :asc)
     render :index
   end
 
@@ -53,5 +53,9 @@ class BooksController < ApplicationController
 
     def book_params
       params.require(:book).permit(:title, :author, :publisher, :pub_date, :description, :price, :isbn, :amazon_id)
+    end
+
+    def per_page
+      5
     end
 end

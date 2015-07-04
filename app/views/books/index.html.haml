@@ -7,6 +7,8 @@
     in the catalog
 .clearfix
 - if @books.any?
+  = will_paginate @books
   = render @books
+  = will_paginate @books
 -else
   .alert.alert-danger.alert-big.text-center No books found 

@@ -42,6 +42,9 @@ gem 'faker'
 # Pretty print your Ruby objects
 gem 'awesome_print'
 
+gem 'will_paginate', '~> 3.0.6'
+gem 'bootstrap-will_paginate'
+
 group :production do
   gem 'pg'
   gem 'rails_12factor'
