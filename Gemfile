@@ -50,7 +50,10 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :development, :test do
+group :development, :test do  
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -60,4 +63,8 @@ group :development, :test do
   # An IRB alternative and runtime developer console
   gem 'pry'
   gem 'pry-byebug'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
