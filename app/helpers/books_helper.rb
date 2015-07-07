@@ -1,5 +1,5 @@
 module BooksHelper
-  def book_cover(title, amazon_id)
+  def book_cover(title, amazon_id = nil)
     if amazon_id.nil?
       url = "http://placehold.it/140x172"
     else
