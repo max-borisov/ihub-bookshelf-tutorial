@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   private
+
     def check_access
       redirect_to new_user_session_path unless params[:id] == current_user.id.to_s
     end
