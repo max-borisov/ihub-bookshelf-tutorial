@@ -1,4 +1,6 @@
-# Tutorial for building a Rails application
+Tutorial for building a Rails application
+===
+[![Build Status](https://travis-ci.org/max-borisov/ihub-rails-bookshelf-tutorial.svg?branch=master)](https://travis-ci.org/max-borisov/ihub-rails-bookshelf-tutorial)
 
 [Wiki documentation](https://github.com/max-borisov/ihub-rails-bookshelf-tutorial/wiki) is also available (in progress).
 
