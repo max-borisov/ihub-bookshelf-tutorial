@@ -1,10 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_book, only: [:create, :destroy]
+  before_action :build_review, only: [:create]
 
   def create
     respond_to do |format|
-      if build_review.save
+      if @review.save
         format.html { redirect_to book_path(@book), notice: 'New review has been added' }
         format.js   { render layout: false }
       else
