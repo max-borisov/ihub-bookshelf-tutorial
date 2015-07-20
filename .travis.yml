@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+  - 2.2.2
+deploy:
+  provider: heroku
+  api_key:
+    secure: NBQuutYL3XcYl7B+Q8pdkS0x/0ylSQPpTxFMrNI2cxneRPiccD3L1v06MbnpUPMN/UYjwWrhqxB/3Pq4jaX67BthwpFCdY+mhojoIp8BZq+5UDkVFllhk8Z24aQT12PmTVPhePQaDn2a7T3jgV9XyWejBGhXtW3GqRgG//jevQcGeJCEb7SccqxEg1VR42lDspiXaOjjmtKOog+B2I9iINS4BucUL1D30m7ARYjvIB/bonItAfJXnRbuHYbQmZmQ++qaaDmp1X7hTiHG4Kqn7+DOd2qBMX5pcngV1oJsNU2rQdMl8NDf1HRVnO2N1zadRoau1ZA2/00DYLca6i9H36Q/nwHWPPMyiMMDdQxkoa7TOB5lvFrUDOgdkvOPooX+sHkC3AwPrAvssLI8GHTBLUCsaZgQ0vnOYK+DXBSUs9lghe7u9h/SlaFFTzvLK/wPzdu1EIlUS9jvd8T372JQvq41XJ9G+buarcuwhYwD5Oo3G8p0jsakitFOfo//zALP+NCY0Y2bkZAKj4+ur1nv6OSD7WBuoD7BNFVsIQH0N6owb0JJbU0BzhHkpTy1iWgVt7vKqi6IuHTUnFMnBrwb/n8k16OplB9D2Jv81SGMLSvbD6YtgHWUf8W9dwUkdZhZgAG8hqbz+J6fhCZWM2FxvUeuzXumQhrsGT6ERWwRgTg=
+  app: ihub-rails-bookshelf
+  on:
+    repo: max-borisov/ihub-rails-bookshelf-tutorial
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - bundle exec rake db:setup
+script:
+  - bundle exec rspec spec/
