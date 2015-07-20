@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   protected
-    def record_not_found
-      redirect_to books_path, flash: { danger: 'Record not found' }
-    end
+
+  def record_not_found
+    redirect_to books_path, flash: { danger: 'Record not found' }
+  end
 end

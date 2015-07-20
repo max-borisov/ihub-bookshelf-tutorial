@@ -1,5 +1,5 @@
 - if user_signed_in?
-  - if current_user.has_book_in_shopping_cart?(book)
+  - if current_user.book_in_shopping_cart?(book)
     .text-center= button_to('Added', '#', disabled: 'disabled', class: 'btn btn-md add-to-cart-btn')
   - else
     .text-center= button_to('Add to cart', shopping_cart_items_path, params: { book_id: book.id }, class: 'btn btn-md btn-primary add-to-cart-btn')

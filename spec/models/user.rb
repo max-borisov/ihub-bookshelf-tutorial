@@ -14,17 +14,17 @@ describe User do
     let(:book_php) { build(:book, title: 'PHP', price: 25.25) }
     let(:book_ruby) { build(:book, title: 'Ruby', price: 25.25) }
 
-    describe '#has_book_in_shopping_cart?' do
+    describe '#book_in_shopping_cart?' do
       before do
         create(:shopping_cart_item, user: tom, book: book_php)
       end
 
       it 'returns true if specified book belongs to shopping cart' do
-        expect(tom.has_book_in_shopping_cart?(book_php)).to be true
+        expect(tom.book_in_shopping_cart?(book_php)).to be true
       end
 
       it 'returns false if specified book does not belong to shopping cart' do
-        expect(jack.has_book_in_shopping_cart?(book_php)).to be false
+        expect(jack.book_in_shopping_cart?(book_php)).to be false
       end
     end
 
