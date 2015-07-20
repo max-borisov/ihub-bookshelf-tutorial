@@ -7,11 +7,11 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     respond_to do |format|
       if @review.save
-        format.html { redirect_to book_path(@book), notice: 'New review has been added.' }
+        format.html { redirect_to book_path(@book), notice: 'New review has been added' }
         format.js   { render layout: false }
       else
         error_message = 'Review could not be saved'
-        format.html { redirect_to book_path(@book), danger: error_message }
+        format.html { redirect_to book_path(@book), flash: { danger: error_message } }
         format.js   { render 'error', layout: false, locals: { message: error_message } }
       end
     end
@@ -36,11 +36,11 @@ class ReviewsController < ApplicationController
   end
 
   private
-    def review_params
-      params.require(:review).permit(:text)
-    end
+  def review_params
+    params.require(:review).permit(:text)
+  end
 
-    def set_book
-      @book = Book.find(params[:book_id])
-    end
+  def set_book
+    @book = Book.find(params[:book_id])
+  end
 end

@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-  
+  before_action :admin_only, except: [:index, :search, :show]
+
   def index
     @books = Book.paginate(:page => params[:page], :per_page => per_page).order(created_at: :asc)
   end
@@ -9,6 +10,11 @@ class BooksController < ApplicationController
   def search
     @books = Book.search(params[:keywords]).paginate(:page => params[:page], :per_page => per_page).order(created_at: :asc)
     render :index
+  end
+
+  def show
+    @reviews = @book.reviews
+    @review = Review.new
   end
 
   def new
@@ -22,11 +28,6 @@ class BooksController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @reviews = @book.reviews
-    @review = Review.new
   end
 
   def edit
@@ -47,15 +48,19 @@ class BooksController < ApplicationController
   end
 
   private
-    def set_book
-      @book = Book.find(params[:id])
-    end
+  def set_book
+    @book = Book.find(params[:id])
+  end
 
-    def book_params
-      params.require(:book).permit(:title, :author, :publisher, :pub_date, :description, :price, :isbn, :amazon_id)
-    end
+  def book_params
+    params.require(:book).permit(:title, :author, :publisher, :pub_date, :description, :price, :isbn, :amazon_id)
+  end
 
-    def per_page
-      5
-    end
+  def admin_only
+    redirect_to books_path, flash: { alert: 'Only admin can manage books' } unless current_user.admin?
+  end
+
+  def per_page
+    5
+  end
 end

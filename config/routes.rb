@@ -1,9 +1,9 @@
-Rails.application.routes.draw do  
+Rails.application.routes.draw do
   root 'books#index'
   devise_for :users
   resources :users, only: [:show, :destroy]
   resources :books do
-    resources :reviews, only: [:create, :destroy], on: :member
+    resources :reviews, only: [:create, :destroy]
     get 'search' => 'books#search', on: :collection
   end
   resources :shopping_cart_items, only: [:index, :create, :destroy]

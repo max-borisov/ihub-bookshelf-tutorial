@@ -3,9 +3,6 @@ class UsersController < ApplicationController
   before_action :check_access
   before_action :set_user
 
-  def show
-  end
-
   def destroy
     @user.destroy
     redirect_to new_user_registration_path, notice: "User account has been deleted"
