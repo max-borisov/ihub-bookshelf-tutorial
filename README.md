@@ -2,9 +2,11 @@ Tutorial for building a Rails application
 ===
 [![Build Status](https://travis-ci.org/max-borisov/ihub-rails-bookshelf-tutorial.svg?branch=master)](https://travis-ci.org/max-borisov/ihub-rails-bookshelf-tutorial) [![Code Climate](https://codeclimate.com/github/max-borisov/ihub-rails-bookshelf-tutorial/badges/gpa.svg)](https://codeclimate.com/github/max-borisov/ihub-rails-bookshelf-tutorial) [![Test Coverage](https://codeclimate.com/github/max-borisov/ihub-rails-bookshelf-tutorial/badges/coverage.svg)](https://codeclimate.com/github/max-borisov/ihub-rails-bookshelf-tutorial/coverage)
 
+## [Demo on heroku](https://rails-simple-todo.herokuapp.com/)
+
 [Wiki documentation](https://github.com/max-borisov/ihub-rails-bookshelf-tutorial/wiki) is also available (in progress).
 
-Basic functionality:
+**Basic functionality:**
 
 * User registration / login
 * Add / edit / delete books by admin
@@ -13,9 +15,9 @@ Basic functionality:
 * Manage shopping cart
 * Create / view orders
 
-In order to test the app:
+**Installation:**
 
-1. clone repository to your empty project directory 
+1. clone repository to empty directory 
 2. run `$ rake db:migrate` to apply database changes
 3. run `$ rake db:seed` to fill in the app with data
 4. run `rails server`
