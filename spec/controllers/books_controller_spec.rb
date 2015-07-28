@@ -14,7 +14,7 @@ describe BooksController do
 
     describe 'GET search' do
       it 'applies search criteria and exposes books in the catalog' do
-        book_php = create(:book, title: 'PHP')
+        create(:book, title: 'PHP')
         book_ruby = create(:book, title: 'Ruby')
         get :search, keywords: 'Ruby'
         expect(assigns(:books)).to eq([book_ruby])
@@ -24,7 +24,7 @@ describe BooksController do
     describe 'GET show' do
       it 'exposes the requested book' do
         book = create(:book)
-        get :show, { id: book.to_param }
+        get :show, id: book.to_param
         expect(assigns(:book)).to eq(book)
         expect(assigns(:review)).to be_an_instance_of(Review)
       end
@@ -39,7 +39,7 @@ describe BooksController do
 
     describe 'POST create' do
       it 'redirects user to the login page' do
-        post :create, { book: valid_attributes }
+        post :create, book: valid_attributes
         expect(response).to redirect_to(new_user_session_path)
       end
     end
@@ -47,7 +47,7 @@ describe BooksController do
     describe 'GET edit' do
       it 'redirects user to the login page' do
         book = create(:book)
-        get :edit, { id: book.to_param }
+        get :edit, id: book.to_param
         expect(response).to redirect_to(new_user_session_path)
       end
     end
@@ -55,7 +55,7 @@ describe BooksController do
     describe 'PUT update' do
       it 'redirect user to the login page' do
         book = create(:book)
-        put :update, { :id => book.to_param, :book => valid_attributes }
+        put :update, id: book.to_param, book: valid_attributes
         expect(response).to redirect_to(new_user_session_path)
       end
     end
@@ -63,7 +63,7 @@ describe BooksController do
     describe 'DELETE destroy' do
       it 'redirect user to the login page' do
         book = create(:book)
-        delete :destroy, { :id => book.to_param }
+        delete :destroy, id: book.to_param
         expect(response).to redirect_to(new_user_session_path)
       end
     end
@@ -90,7 +90,7 @@ describe BooksController do
 
       describe 'POST create' do
         it 'redirects user to the books page' do
-          post :create, { book: valid_attributes }
+          post :create, book: valid_attributes
           expect(response).to redirect_to(books_path)
         end
       end
@@ -98,7 +98,7 @@ describe BooksController do
       describe 'GET edit' do
         it 'redirects user to the books page' do
           book = create(:book)
-          get :edit, { id: book.to_param }
+          get :edit, id: book.to_param
           expect(response).to redirect_to(books_path)
         end
       end
@@ -106,7 +106,7 @@ describe BooksController do
       describe 'PUT update' do
         it 'redirect user to the books page' do
           book = create(:book)
-          put :update, { :id => book.to_param, :book => valid_attributes }
+          put :update, id: book.to_param, book: valid_attributes
           expect(response).to redirect_to(books_path)
         end
       end
@@ -114,7 +114,7 @@ describe BooksController do
       describe 'DELETE destroy' do
         it 'redirect user to the books page' do
           book = create(:book)
-          delete :destroy, { :id => book.to_param }
+          delete :destroy, id: book.to_param
           expect(response).to redirect_to(books_path)
         end
       end
@@ -143,18 +143,18 @@ describe BooksController do
         describe 'with valid params' do
           it 'creates a new Book' do
             expect {
-              post :create, { book: valid_attributes }
+              post :create, book: valid_attributes
             }.to change(Book, :count).by(1)
           end
 
           it 'exposes a newly created book as #book' do
-            post :create, { book: valid_attributes }
+            post :create, book: valid_attributes
             expect(assigns(:book)).to be_an_instance_of(Book)
             expect(assigns(:book)).to be_persisted
           end
 
           it 'redirects to the created book' do
-            post :create, { book: valid_attributes }
+            post :create, book: valid_attributes
             expect(response).to redirect_to(Book.last)
           end
         end
@@ -162,13 +162,13 @@ describe BooksController do
         describe 'with invalid params' do
           it 'exposes a newly created but unsaved category' do
             allow_any_instance_of(Book).to receive(:save).and_return(false)
-            post :create, { book: invalid_attributes }
+            post :create, book: invalid_attributes
             expect(assigns(:book)).to be_a_new(Book)
           end
 
           it "re-renders the 'new' template" do
             allow_any_instance_of(Book).to receive(:save).and_return(false)
-            post :create, { book: invalid_attributes }
+            post :create, book: invalid_attributes
             expect(response).to render_template('new')
           end
         end
@@ -177,7 +177,7 @@ describe BooksController do
       describe 'GET edit' do
         it 'exposes the requested book' do
           book = create(:book)
-          get :edit, { id: book.to_param }
+          get :edit, id: book.to_param
           expect(assigns(:book)).to eq(book)
         end
       end
@@ -187,18 +187,18 @@ describe BooksController do
 
         describe 'with valid params' do
           it 'updates the requested book' do
-            attributes = valid_attributes.stringify_keys.transform_values { |x| x.to_s }
+            attributes = valid_attributes.stringify_keys.transform_values(&:to_s)
             allow_any_instance_of(Book).to receive(:update).with(attributes)
-            put :update, { :id => book.to_param, :book => attributes }
+            put :update, id: book.to_param, book: attributes
           end
 
           it 'exposes the requested book' do
-            put :update, { :id => book.to_param, :book => valid_attributes }
+            put :update, id: book.to_param, book: valid_attributes
             expect(assigns(:book)).to eq(book)
           end
 
           it 'redirects to the book' do
-            put :update, { :id => book.to_param, :book => valid_attributes }
+            put :update, id: book.to_param, book: valid_attributes
             expect(response).to redirect_to(book)
           end
         end
@@ -206,13 +206,13 @@ describe BooksController do
         describe 'with invalid params' do
           it 'exposes the book' do
             allow_any_instance_of(Book).to receive(:update).and_return(false)
-            put :update, { :id => book.to_param, :book => invalid_attributes }
+            put :update, id: book.to_param, book: invalid_attributes
             expect(assigns(:book)).to eq(book)
           end
 
           it "re-renders the 'edit' template" do
             allow_any_instance_of(Book).to receive(:update).and_return(false)
-            put :update, { :id => book.to_param, :book => invalid_attributes }
+            put :update, id: book.to_param, book: invalid_attributes
             expect(response).to render_template('edit')
           end
         end
@@ -223,12 +223,12 @@ describe BooksController do
 
         it 'destroys the requested book' do
           expect {
-            delete :destroy, { :id => book.to_param }
+            delete :destroy, id: book.to_param
           }.to change(Book, :count).by(-1)
         end
 
         it 'redirects to the books list' do
-          delete :destroy, { :id => book.to_param }
+          delete :destroy, id: book.to_param
           expect(response).to redirect_to(books_url)
         end
       end

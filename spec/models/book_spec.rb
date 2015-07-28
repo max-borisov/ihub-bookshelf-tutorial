@@ -27,7 +27,8 @@ describe Book do
   context 'When book is saved' do
     it 'fills keywords field' do
       book = create(:book)
-      expect(book.keywords).to eq([book.title, book.author, book.isbn, book.amazon_id].join(' ').strip)
+      keywords = [book.title, book.author, book.isbn, book.amazon_id].join(' ').strip
+      expect(book.keywords).to eq(keywords)
     end
   end
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe BooksHelper, :type => :helper do
-  describe "book_cover" do
+  describe 'book_cover' do
     let(:cover) { book_cover('Ruby') }
 
     it 'returnes an image tag' do
@@ -21,14 +21,14 @@ RSpec.describe BooksHelper, :type => :helper do
     context 'when amazon_id is set' do
       it 'has amazon images server url' do
         cover = book_cover('Ruby', 1941222196)
-        expect(cover).to include("http://images.amazon.com/images/")
+        expect(cover).to include('http://images.amazon.com/images/')
       end
     end
   end
 
-  describe "format_pub_date" do
+  describe 'format_pub_date' do
     it 'returnes formatted date' do
-      expect(format_pub_date(Time.now)).not_to eq('')
+      expect(format_pub_date(Time.zone.now)).not_to eq('')
     end
   end
 end

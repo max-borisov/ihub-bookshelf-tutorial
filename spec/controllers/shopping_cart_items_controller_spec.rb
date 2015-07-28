@@ -46,12 +46,12 @@ describe ShoppingCartItemsController do
     describe 'POST create' do
       it 'creates a new shopping cart item' do
         expect {
-          post :create, { book_id: book.to_param }
+          post :create, book_id: book.to_param
         }.to change(ShoppingCartItem, :count).by(1)
       end
 
       it 'redirects to the books catalog page' do
-        post :create, { book_id: book.to_param }
+        post :create, book_id: book.to_param
         expect(response).to redirect_to(books_path)
         expect(flash[:notice]).to eq("\"#{book[:title]}\" has been added to your shopping cart")
       end
@@ -59,9 +59,10 @@ describe ShoppingCartItemsController do
       context 'item wasn\'t saved' do
         it 'redirects to the book page' do
           allow_any_instance_of(ShoppingCartItem).to receive(:save).and_return(false)
-          post :create, { book_id: book.to_param }
+          post :create, book_id: book.to_param
           expect(response).to redirect_to(book_path(book))
-          expect(flash[:danger]).to eq("\"#{book[:title]}\" could not be added to your shopping cart. Please, try again.")
+          msg = "\"#{book[:title]}\" could not be added to your shopping cart. Please, try again."
+          expect(flash[:danger]).to eq(msg)
         end
       end
     end
@@ -71,14 +72,15 @@ describe ShoppingCartItemsController do
 
       it 'destroys the requested item' do
         expect {
-          delete :destroy, { :id => shopping_cart_item.to_param }
+          delete :destroy, id: shopping_cart_item.to_param
         }.to change(ShoppingCartItem, :count).by(-1)
       end
 
       it 'redirects to the shopping cart page' do
-        delete :destroy, { :id => shopping_cart_item.to_param }
+        delete :destroy, id: shopping_cart_item.to_param
         expect(response).to redirect_to(shopping_cart_items_path)
-        expect(flash[:notice]).to eq("\"#{shopping_cart_item.book.title}\" has been removed for the shopping cart")
+        msg = "\"#{shopping_cart_item.book.title}\" has been removed for the shopping cart"
+        expect(flash[:notice]).to eq(msg)
       end
     end
 
@@ -86,7 +88,7 @@ describe ShoppingCartItemsController do
       it 'redirects to the books catalog page' do
         user2 = build(:user)
         shopping_cart_item = create(:shopping_cart_item, user: user2)
-        delete :destroy, { :id => shopping_cart_item.to_param }
+        delete :destroy, id: shopping_cart_item.to_param
         expect(response).to redirect_to(books_path)
       end
     end

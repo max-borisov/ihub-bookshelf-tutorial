@@ -12,10 +12,8 @@ class ShoppingCartItemsController < ApplicationController
         books_path,
         notice: "\"#{book_title}\" has been added to your shopping cart")
     else
-      redirect_to(
-        book_path(params[:book_id]),
-        flash: {
-          danger: "\"#{book_title}\" could not be added to your shopping cart. Please, try again." })
+      flash[:danger] = "\"#{book_title}\" could not be added to your shopping cart. Please, try again."
+      redirect_to book_path(params[:book_id])
     end
   end
 

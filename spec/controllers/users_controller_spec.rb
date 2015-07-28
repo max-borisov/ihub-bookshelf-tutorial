@@ -12,12 +12,12 @@ describe UsersController do
 
     it 'destroys the requested user' do
       expect {
-        delete :destroy, { :id => user.to_param }
+        delete :destroy, id: user.to_param
       }.to change(User, :count).by(-1)
     end
 
     it 'redirects to the registration page' do
-      delete :destroy, { :id => user.to_param }
+      delete :destroy, id: user.to_param
       expect(response).to redirect_to(new_user_registration_path)
       expect(flash[:notice]).to eq('User account has been deleted')
     end
@@ -26,7 +26,7 @@ describe UsersController do
       let(:user2) { create(:user, email: 'tom@gmail.com') }
 
       it 'redirects to the login page' do
-        delete :destroy, { :id => user2.to_param }
+        delete :destroy, id: user2.to_param
         expect(response).to redirect_to(new_user_session_path)
       end
     end

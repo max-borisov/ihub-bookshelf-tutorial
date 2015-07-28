@@ -101,7 +101,7 @@ describe ReviewsController do
             expect(assigns(:review)).to be_a_new(Review)
           end
 
-          it "redirects to the book page review was added at" do
+          it 'redirects to the book page review was added at' do
             expect(response).to redirect_to(book)
           end
         end
@@ -129,7 +129,7 @@ describe ReviewsController do
       let!(:user_review) { create(:review, user: user, book: book) }
 
       context 'user is admin' do
-        before do          
+        before do
           allow(controller.current_user).to receive(:admin?).and_return(true)
         end
 
@@ -166,8 +166,8 @@ describe ReviewsController do
           describe 'format html' do
             it 'deletes the review' do
               expect {
-              delete :destroy, book_id: book.id, id: user_review.id, format: 'html'
-            }.to change(Review, :count).by(-1)
+                delete :destroy, book_id: book.id, id: user_review.id, format: 'html'
+              }.to change(Review, :count).by(-1)
             end
 
             it 'redirects to the book page review belongs to' do
@@ -179,8 +179,8 @@ describe ReviewsController do
           describe 'format js' do
             it 'deletes the review' do
               expect {
-              delete :destroy, book_id: book.id, id: user_review.id, format: 'js'
-            }.to change(Review, :count).by(-1)
+                delete :destroy, book_id: book.id, id: user_review.id, format: 'js'
+              }.to change(Review, :count).by(-1)
             end
 
             it 'renders \'destroy\' template' do
@@ -189,7 +189,7 @@ describe ReviewsController do
             end
           end
         end
-          
+
         context 'deletes other\'s user review' do
           it 'redirects to the books page' do
             delete :destroy, book_id: book.id, id: user2_review.id

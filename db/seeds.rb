@@ -13,9 +13,9 @@ Review.destroy_all
 Book.destroy_all
 User.destroy_all
 
-require_relative('../db/seeds/users')
-require_relative('../db/seeds/books')
-require_relative('../db/seeds/reviews')
-require_relative('../db/seeds/shopping_cart_items')
-require_relative('../db/seeds/orders')
-require_relative('../db/seeds/order_items')
+require_relative('./seeds/users')
+require_relative('./seeds/books')
+require_relative('./seeds/reviews')
+require_relative('./seeds/shopping_cart_items')
+require_relative('./seeds/orders')
+require_relative('./seeds/order_items')
